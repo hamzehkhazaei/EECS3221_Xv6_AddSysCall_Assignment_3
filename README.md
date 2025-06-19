@@ -116,9 +116,9 @@ To include your test program in Xv6:
    ```
 
 Expected output:
-    ```
-    Note: The OS course number at York University is: 3221
-    ```
+   ```bash
+   Note: The OS course number at York University is: 3221
+   ```
 
 ## Understanding the Process
 
