@@ -120,7 +120,10 @@ To include your test program in Xv6:
    make qemu-nox
    ```
 
-3. In the Xv6 shell, run your test program:
+3. In the Xv6 shell, run `ls` to see the list of availabe programs; you should see your test program in there:
+   <img src="source/ls.png" alt="Description" style="max-width:100%; width:300px;">
+
+4. In the Xv6 shell, run your test program:
    ```bash
    testgetcourseno
    ```
