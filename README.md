@@ -31,7 +31,9 @@ Open `syscall.h` and add a new system call number. Since there are 21 existing s
 #define SYS_getcourseno 22
 ```
 
-![image](source/syscallh.png)
+<!-- ![image](source/syscallh.png) -->
+<img src="source/syscallh.png" alt="Description" style="max-width:100%; width:300px;">
+
 
 ### Step 2: Add Function Pointer to Dispatch Table
 
