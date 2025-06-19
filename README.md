@@ -1,6 +1,6 @@
 # Tutorial 2: Kernel Programming by Adding a System Call in Xv6
 
-A comprehensive guide to adding custom system calls in the xv6 operating system.
+A comprehensive guide to adding custom system calls in the Xv6 operating system.
 
 ## Overview
 
