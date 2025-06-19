@@ -30,8 +30,6 @@ Open `syscall.h` and add a new system call number. Since there are 21 existing s
 ```c
 #define SYS_getcourseno 22
 ```
-
-<!-- ![image](source/syscallh.png) -->
 <img src="source/syscallh.png" alt="Description" style="max-width:100%; width:300px;">
 
 
@@ -42,12 +40,15 @@ In `syscall.c`, add the function pointer to the system call dispatch table:
 ```c
 [SYS_getcourseno] sys_getcourseno,
 ```
+<img src="source/syscall1.png" alt="Description" style="max-width:100%; width:300px;">
+
 
 Also, add the function prototype in the same file:
 
 ```c
 extern int sys_getcourseno(void);
 ```
+<img src="source/syscall2.png" alt="Description" style="max-width:100%; width:300px;">
 
 ### Step 3: Implement the System Call Function
 
