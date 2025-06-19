@@ -62,6 +62,8 @@ sys_getcourseno(void)
     return 3221;
 }
 ```
+<img src="source/sysproc.png" alt="Description" style="max-width:100%; width:300px;">
+
 
 ### Step 4: Add User-Space Assembly Stub
 
@@ -70,6 +72,7 @@ In `usys.S`, add the assembly stub that will be called from user programs:
 ```assembly
 SYSCALL(getcourseno)
 ```
+<img src="source/usys.png" alt="Description" style="max-width:100%; width:300px;">
 
 ### Step 5: Add User-Space Function Declaration
 
@@ -78,6 +81,7 @@ In `user.h`, add the function declaration that user programs will use:
 ```c
 int getcourseno(void);
 ```
+<img src="source/userh.png" alt="Description" style="max-width:100%; width:300px;">
 
 ## Testing the System Call
 
@@ -101,7 +105,8 @@ To include your test program in Xv6:
 
 1. Save the test program as `testgetcourseno.c` in the Xv6 directory
 2. Add `_testgetcourseno\` to the `UPROGS` section in the `Makefile`
-3. Recompile and run Xv6
+   <img src="source/makefile.png" alt="Description" style="max-width:100%; width:300px;">
+3. Recompile and run Xv6 as the following.
 
 ## Building and Running
 
