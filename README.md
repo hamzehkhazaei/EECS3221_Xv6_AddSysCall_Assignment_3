@@ -94,8 +94,8 @@ int main(void)
 
 To include your test program in Xv6:
 
-1. Save the test program as `testcourseno.c` in the Xv6 directory
-2. Add `_testcourseno\` to the `UPROGS` section in the `Makefile`
+1. Save the test program as `testgetcourseno.c` in the Xv6 directory
+2. Add `_testgetcourseno\` to the `UPROGS` section in the `Makefile`
 3. Recompile and run Xv6
 
 ## Building and Running
