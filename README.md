@@ -116,9 +116,9 @@ To include your test program in Xv6:
    ```
 
 Expected output:
-```
-Note: The OS course number at York University is: 3221
-```
+    ```
+    Note: The OS course number at York University is: 3221
+    ```
 
 ## Understanding the Process
 
@@ -129,7 +129,7 @@ Note: The OS course number at York University is: 3221
 3. **Kernel Trap**: CPU traps to kernel mode
 4. **Dispatch**: `syscall()` function looks up system call number 22
 5. **Execution**: `sys_getyear()` function executes and returns 1975
-6. **Return**: Value is returned to user program
+6. **Return**: Value is returned to the user program
 
 ### Key Concepts
 
@@ -160,7 +160,7 @@ Note: The OS course number at York University is: 3221
 
 ## Conclusion
 
-Adding system calls to xv6 is a fundamental exercise in understanding operating system internals. 
+Adding system calls to xv6 is a fundamental exercise in understanding the internals of an operating system. 
 The process involves creating bridges between user-space applications and kernel functionality, demonstrating the layered architecture of modern operating systems.
 
 This implementation provides a foundation for more complex system calls that can interact with process management, file systems, and hardware resources.
