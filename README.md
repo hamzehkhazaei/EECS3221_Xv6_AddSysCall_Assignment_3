@@ -36,7 +36,7 @@ Open `syscall.h` and add a new system call number. Since there are 21 existing s
 In `syscall.c`, add the function pointer to the system call dispatch table:
 
 ```c
-[SYS_courseno] sys_courseno,
+[SYS_getcourseno] sys_getcourseno,
 ```
 
 Also, add the function prototype in the same file:
