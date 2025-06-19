@@ -122,7 +122,7 @@ To include your test program in Xv6:
 
 3. In the Xv6 shell, run your test program:
    ```bash
-   testcourseno
+   testgetcourseno
    ```
 
 Expected output:
