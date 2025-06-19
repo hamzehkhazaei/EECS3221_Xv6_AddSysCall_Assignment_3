@@ -105,7 +105,7 @@ To include your test program in Xv6:
 
 1. Save the test program as `testgetcourseno.c` in the Xv6 directory
 2. Add `_testgetcourseno\` to the `UPROGS` section in the `Makefile`
-   <img src="source/makefile.png" alt="Description" style="max-width:100%; width:300px;">
+<img src="source/makefile.png" alt="Description" style="max-width:100%; width:300px;">
 3. Recompile and run Xv6 as the following.
 
 ## Building and Running
