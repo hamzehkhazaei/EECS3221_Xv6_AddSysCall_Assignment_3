@@ -1,20 +1,19 @@
-# Adding System Call in xv6
+# Adding System Call in Xv6
 
 A comprehensive guide to adding custom system calls in the xv6 operating system.
 
 ## Overview
 
-This guide demonstrates how to implement a custom system call called `getyear` which returns 1975 from the kernel (the year Unix version 6 was released). Adding a new system call in xv6 requires modifying 5 key files in the operating system.
+This guide demonstrates how to implement a custom system call called `getcourse`, which returns 3221 from the kernel (the number for our OS course). 
+Adding a new system call in Xv6 requires modifying five key files in the operating system.
 
 ## Prerequisites
 
-- Basic understanding of C programming
-- Familiarity with xv6 operating system structure
-- Development environment set up with xv6 source code
+- [Set up Xv6](https://github.com/hamzehkhazaei/EECS3221_Xv6-Setup) 
 
 ## Files to Modify
 
-To add a new system call in xv6, you need to modify the following files:
+To add a new system call in Xv6, you need to modify the following files:
 
 1. `syscall.h` - System call number definitions
 2. `syscall.c` - System call dispatch table
@@ -29,7 +28,7 @@ To add a new system call in xv6, you need to modify the following files:
 Open `syscall.h` and add a new system call number. Since there are 21 existing system calls, we'll use number 22:
 
 ```c
-#define SYS_getyear 22
+#define SYS_getcourseno 22
 ```
 
 ### Step 2: Add Function Pointer to Dispatch Table
@@ -37,13 +36,13 @@ Open `syscall.h` and add a new system call number. Since there are 21 existing s
 In `syscall.c`, add the function pointer to the system call dispatch table:
 
 ```c
-[SYS_getyear] sys_getyear,
+[SYS_courseno] sys_courseno,
 ```
 
-Also add the function prototype in the same file:
+Also, add the function prototype in the same file:
 
 ```c
-extern int sys_getyear(void);
+extern int sys_getcourseno(void);
 ```
 
 ### Step 3: Implement the System Call Function
@@ -51,11 +50,11 @@ extern int sys_getyear(void);
 Open `sysproc.c` and add the implementation of your system call:
 
 ```c
-// Return the year Unix version 6 was released
+// Return the code of our OS course
 int
-sys_getyear(void)
+sys_getcourseno(void)
 {
-    return 1975;
+    return 3221;
 }
 ```
 
@@ -64,7 +63,7 @@ sys_getyear(void)
 In `usys.S`, add the assembly stub that will be called from user programs:
 
 ```assembly
-SYSCALL(getyear)
+SYSCALL(getcourseno)
 ```
 
 ### Step 5: Add User-Space Function Declaration
@@ -72,12 +71,12 @@ SYSCALL(getyear)
 In `user.h`, add the function declaration that user programs will use:
 
 ```c
-int getyear(void);
+int getcourseno(void);
 ```
 
 ## Testing the System Call
 
-Create a test user program to verify your system call works correctly:
+Create a test user program to verify that your system call works correctly:
 
 ```c
 #include "types.h"
@@ -86,46 +85,46 @@ Create a test user program to verify your system call works correctly:
 
 int main(void)
 {
-    printf(1, "Note: Unix V6 was released in year %d\n", getyear());
+    printf(1, "Note: The OS course number at York University is: %d\n", getcourseno());
     exit();
 }
 ```
 
 ### Adding the Test Program
 
-To include your test program in xv6:
+To include your test program in Xv6:
 
-1. Save the test program as `testyear.c` in the xv6 directory
-2. Add `_testyear\` to the `UPROGS` section in the `Makefile`
-3. Recompile and run xv6
+1. Save the test program as `testcourseno.c` in the Xv6 directory
+2. Add `_testcourseno\` to the `UPROGS` section in the `Makefile`
+3. Recompile and run Xv6
 
 ## Building and Running
 
-1. Compile xv6:
+1. Compile Xv6:
    ```bash
    make
    ```
 
-2. Run xv6 in QEMU:
+2. Run Xv6 in QEMU:
    ```bash
-   make qemu
+   make qemu-nox
    ```
 
-3. In the xv6 shell, run your test program:
+3. In the Xv6 shell, run your test program:
    ```bash
-   testyear
+   testcourseno
    ```
 
 Expected output:
 ```
-Note: Unix V6 was released in year 1975
+Note: The OS course number at York University is: 3221
 ```
 
 ## Understanding the Process
 
 ### System Call Flow
 
-1. **User Program Call**: User program calls `getyear()`
+1. **User Program Call**: User program calls `getcourseno()`
 2. **Assembly Stub**: `usys.S` stub puts system call number in register
 3. **Kernel Trap**: CPU traps to kernel mode
 4. **Dispatch**: `syscall()` function looks up system call number 22
@@ -138,26 +137,6 @@ Note: Unix V6 was released in year 1975
 - **Function Pointers**: The kernel uses a table of function pointers for efficient dispatch
 - **User/Kernel Interface**: Assembly stubs bridge user-space and kernel-space
 - **Return Values**: System calls can return integer values to user programs
-
-## Advanced System Calls
-
-For more complex system calls that take arguments:
-
-```c
-// Example: system call that takes an integer argument
-int
-sys_myfunction(void)
-{
-    int arg;
-    
-    // Get argument from user space
-    if(argint(0, &arg) < 0)
-        return -1;
-    
-    // Your implementation here
-    return arg * 2;
-}
-```
 
 ## Common Pitfalls
 
@@ -175,12 +154,15 @@ sys_myfunction(void)
 
 ## Additional Resources
 
-- [xv6 Book](https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf) - Comprehensive guide to xv6
+- [Xv6 Book](https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf) - Comprehensive guide to Xv6
 - [MIT 6.828 Course](https://pdos.csail.mit.edu/6.828/) - Operating systems engineering course
-- [xv6 Source Code](https://github.com/mit-pdos/xv6-public) - Official xv6 repository
+- [Xv6 Source Code](https://github.com/mit-pdos/xv6-public) - Official Xv6 repository
 
 ## Conclusion
 
-Adding system calls to xv6 is a fundamental exercise in understanding operating system internals. The process involves creating bridges between user-space applications and kernel functionality, demonstrating the layered architecture of modern operating systems.
+Adding system calls to xv6 is a fundamental exercise in understanding operating system internals. 
+The process involves creating bridges between user-space applications and kernel functionality, demonstrating the layered architecture of modern operating systems.
 
 This implementation provides a foundation for more complex system calls that can interact with process management, file systems, and hardware resources.
+
+**Instructor:** Hamzeh Khazaei
