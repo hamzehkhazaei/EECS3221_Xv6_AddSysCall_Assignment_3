@@ -1,19 +1,19 @@
-# Tutorial 2: Kernel Programming by Adding a System Call in Xv6
+# Tutorial 2: Kernel Programming by Adding a System Call in xv6
 
-A comprehensive guide to adding custom system calls in the Xv6 operating system.
+A comprehensive guide to adding custom system calls in the xv6 operating system.
 
 ## Overview
 
 This guide demonstrates how to implement a custom system call called `getcourse`, which returns 3221 from the kernel (the number for our OS course). 
-Adding a new system call in Xv6 requires modifying five key files in the operating system.
+Adding a new system call in xv6 requires modifying five key files in the operating system.
 
 ## Prerequisites
 
-- [Set up Xv6](https://github.com/hamzehkhazaei/EECS3221_Xv6-Setup) 
+- [Set up xv6](https://github.com/hamzehkhazaei/EECS3221_Xv6-Setup) 
 
 ## Files to Modify
 
-To add a new system call in Xv6, you need to modify the following files:
+To add a new system call in xv6, you need to modify the following files:
 
 1. `syscall.h` - System call number definitions
 2. `syscall.c` - System call dispatch table
@@ -101,29 +101,29 @@ int main(void)
 
 ### Adding the Test Program
 
-To include your test program in Xv6:
+To include your test program in xv6:
 
-1. Save the test program as `testgetcourseno.c` in the Xv6 directory
+1. Save the test program as `testgetcourseno.c` in the xv6 directory
 2. Add `_testgetcourseno\` to the `UPROGS` section in the `Makefile`
 <img src="source/makefile.png" alt="Description" style="max-width:100%; width:300px;">
-3. Recompile and run Xv6 as the following.
+3. Recompile and run xv6 as the following.
 
 ## Building and Running
 
-1. Compile Xv6:
+1. Compile xv6:
    ```bash
    make
    ```
 
-2. Run Xv6 in QEMU:
+2. Run xv6 in QEMU:
    ```bash
    make qemu-nox
    ```
 
-3. In the Xv6 shell, run `ls` to see the list of availabe programs; you should see your test program in there:
+3. In the xv6 shell, run `ls` to see the list of availabe programs; you should see your test program in there:
    <img src="source/ls.png" alt="Description" style="max-width:100%; width:300px;">
 
-4. In the Xv6 shell, run your test program:
+4. In the xv6 shell, run your test program:
    ```bash
    testgetcourseno
    ```
@@ -167,9 +167,9 @@ Expected output:
 
 ## Additional Resources
 
-- [Xv6 Book](https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf) - Comprehensive guide to Xv6
+- [xv6 Book](https://pdos.csail.mit.edu/6.828/2018/xv6/book-rev11.pdf) - Comprehensive guide to xv6
 - [MIT 6.828 Course](https://pdos.csail.mit.edu/6.828/) - Operating systems engineering course
-- [Xv6 Source Code](https://github.com/mit-pdos/xv6-public) - Official Xv6 repository
+- [xv6 Source Code](https://github.com/mit-pdos/xv6-public) - Official xv6 repository
 
 ## Conclusion
 
