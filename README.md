@@ -65,7 +65,7 @@ sys_getcourseno(void)
 
 ### Step 4: Add User-Space Assembly Stub
 
-In `usys.pl`, add the entry `entry("getcourseno");` for the new user program:
+In `usys.pl`, add the entry `entry("getcourseno");` at the end of entries for the new user program:
 
 ```
 ...
