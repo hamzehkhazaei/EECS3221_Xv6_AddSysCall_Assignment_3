@@ -62,8 +62,6 @@ sys_getcourseno(void)
     return 3221;
 }
 ```
-<img src="source/sysproc.png" alt="Description" style="max-width:100%; width:300px;">
-
 
 ### Step 4: Add User-Space Assembly Stub
 
