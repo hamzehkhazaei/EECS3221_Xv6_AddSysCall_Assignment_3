@@ -18,7 +18,7 @@ To add a new system call in xv6, you need to modify the following files:
 1. `syscall.h` - System call number definitions
 2. `syscall.c` - System call dispatch table
 3. `sysproc.c` - System call implementation
-4. `usys.pl` - User-space system call stubs
+4. `usys.pl` - Generates the user-space system call stubs
 5. `user.h` - User-space function declarations
 
 ## Step-by-Step Implementation
