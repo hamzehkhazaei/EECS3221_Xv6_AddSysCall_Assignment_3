@@ -87,7 +87,7 @@ int getcourseno(void);
 
 ## Testing the System Call
 
-Create a test user program to verify that your system call works correctly:
+Create a test user program as `getcourseno.c` to verify that your system call works correctly:
 
 ```c
 #include "kernel/types.h"
@@ -105,9 +105,8 @@ int main(void)
 
 To include your test program in xv6:
 
-1. Save the test program as `getcourseno.c` in the xv6 directory
-2. Add `_getcourseno\` to the `UPROGS` section in the `Makefile`
-<img src="source/makefile.png" alt="Description" style="max-width:100%; width:300px;">
+1. Save the test program `getcourseno.c` in the `user` directory
+2. Add `$U/_getcourseno\` to the end of `UPROGS` section in the `Makefile`
 3. Recompile and run xv6 as follows.
 
 ## Building and Running
@@ -116,7 +115,7 @@ To include your test program in xv6:
    ```bash
    make qemu
    ```
-2. In the xv6 shell, run `ls` to see the list of availabe programs; you should see your test program in there:
+2. In the xv6 shell, run `ls` to see the list of available programs; you should see your test program in there:
    <img src="source/ls.png" alt="Description" style="max-width:100%; width:300px;">
 
 3. In the xv6 shell, run your test program:
