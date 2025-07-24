@@ -161,8 +161,7 @@ Expected output:
 ## Additional Resources
 
 - [xv6 Book](https://github.com/hamzehkhazaei/xv6-riscv-book/blob/xv6-riscv/book.pdf) - Comprehensive guide to xv6
-- [MIT 6.828 Course](https://pdos.csail.mit.edu/6.828/) - Operating systems engineering course
-- [xv6 Source Code](https://github.com/hamzehkhazaei/xv6-riscv) - Official xv6 repository
+- [xv6 Source Code](https://github.com/hamzehkhazaei/xv6-riscv) - Latest xv6 code for RISC versoin 5 architecture
 
 ## Conclusion
 
